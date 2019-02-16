@@ -15,7 +15,7 @@ public class UIManager : MonoSingleton<UIManager>
 
 	protected override void Init ()
     {
-        SetUIState( UIState.None );
+        SetUIState( UIState.MainMenu );
     }
 
     public void isLoaded() {
@@ -23,6 +23,8 @@ public class UIManager : MonoSingleton<UIManager>
     }
 
 	public void SetUIState( UIState state ) {
+		Debug.Log("UI State set to: " + state.ToString());
+
 		uiState = state;
 	}
 
@@ -42,6 +44,28 @@ public class UIManager : MonoSingleton<UIManager>
 
 
 	void RenderMainMenu () {
-		
+
+        GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        GUILayout.BeginVertical();
+        GUILayout.FlexibleSpace();
+        
+        if( GUILayout.Button("Play") ) {
+        	Debug.Log("Play clicked");
+        }
+
+        if( GUILayout.Button("How To Play") ) {
+        	Debug.Log("How clicked");
+        }
+
+        if( GUILayout.Button("Settings") ) {
+        	Debug.Log("Settings clicked");
+        }
+        GUILayout.FlexibleSpace();
+        GUILayout.EndVertical();
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUILayout.EndArea();
 	}
 }
