@@ -33,7 +33,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
             m_Instance = this as T;
             m_Instance.Init ();
         } else {
-            //DestroyImmediate (this);
+            DestroyImmediate (this);
         }
     }
 
