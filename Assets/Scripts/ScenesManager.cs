@@ -19,6 +19,11 @@ public class ScenesManager : MonoSingleton<ScenesManager>
 		if( scene.buildIndex == 0 ){
 			LoadMainMenu();
 		}
+
+		//
+		// TODO: Set UI Manager state on each scene load
+		//
+
 	}
 
 	public void LoadMainMenu() {
