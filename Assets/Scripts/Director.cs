@@ -5,7 +5,7 @@ using UnityEngine;
 public class Director : MonoSingleton<Director>
 {
 	private UIManager uiManager;
-	private SceneManager sceneManager;
+	private ScenesManager scenesManager;
 
 
 	protected override void Init ()
@@ -13,6 +13,6 @@ public class Director : MonoSingleton<Director>
         DontDestroyOnLoad (this);
 
         uiManager    = GetComponentInChildren<UIManager>( true );
-        sceneManager = GetComponentInChildren<SceneManager>( true );
+        scenesManager = GetComponentInChildren<ScenesManager>( true );
     }
 }
